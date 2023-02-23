@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Front end folks</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <!-- react libs -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  
+</head>
+<body>
+   
+    <div id="root">    
+    </div>
+
+
+        <!-- <script>
+            const heading = document.createElement('h1');
+            heading.innerHTML = "Chapter 1"; //<h1>Chapter 1</h1>
+            const mainContainer = document.getElementById("root"); //<div id="mainContainer>
+            mainContainer.appendChild(heading);
+        </script> -->
+
+        <script>
+            const heading = React.createElement("h1",{},"This is a react element");
+
+            const para = React.createElement("div",{
+                id: "root-1",
+                className: "container",
+                title: "react"
+            },[heading]);
+
+            const root = ReactDOM.createRoot(document.getElementById("root"));
+            root.render(para);
+        </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
