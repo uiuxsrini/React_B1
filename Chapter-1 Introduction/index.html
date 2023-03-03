@@ -6,37 +6,39 @@
     <title>Front end folks</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-    <!-- react libs -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src='index.js'></script>
   
 </head>
 <body>
    
     <div id="root">    
     </div>
-
-
-        <!-- <script>
+        <script>
             const heading = document.createElement('h1');
             heading.innerHTML = "Chapter 1"; //<h1>Chapter 1</h1>
             const mainContainer = document.getElementById("root"); //<div id="mainContainer>
             mainContainer.appendChild(heading);
-        </script> -->
+        </script>
 
         <script>
             const heading = React.createElement("h1",{},"This is a react element");
 
             const para = React.createElement("div",{
                 id: "root-1",
-                className: "container",
+                className: "container-1",
                 title: "react"
             },[heading]);
 
             const root = ReactDOM.createRoot(document.getElementById("root"));
             root.render(para);
+
+
+            // React.Createlement => render(Oject) => HTML(DOM)
+
         </script>
+
+
+
 
 </body>
 </html>
