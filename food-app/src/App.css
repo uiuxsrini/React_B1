@@ -71,3 +71,25 @@
   flex-wrap: wrap;
 }
 
+.inputBox {
+  margin: 10px;
+  text-align: center;
+  width: 80%;
+}
+
+.searchbar{
+  width: 35%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn {
+  padding: 10px;
+  margin-left: 8px;
+  width: 110px;
+  border-radius: 20px;
+  background: orangered;
+  border: none;
+  color: white;
+}
+
