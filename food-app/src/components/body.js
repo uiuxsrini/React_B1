@@ -1,20 +1,42 @@
+import RestaurantCard from "../components/restaurantCard";
+import { restaurantData } from "../constants";
+import { useState } from "react";
 
-import RestaurantCard from '../components/restaurantCard'
-import {restaurantData} from '../constants'
-import Searchbar from '../components/searchbar';
+function filterData(seachText, resData) {
+  const filter =  resData.filter((res) => res.data.name.includes(seachText));
+  return filter;
+}
 
 const BodyComponent = () => {
-    return (
-      <>
-        <Searchbar/>
+  const [seachText, setSearchText] = useState(""); // react variables
+  const [resData, setResData] = useState(restaurantData); // react variables
+  return (
+    <>
+      <div className="inputBox">
+        <input
+          type="text"
+          placeholder="search"
+          className="searchbar"
+          value={seachText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <button className="btn" onClick={() => {
+          const data = filterData(seachText, resData);
+          setResData(data);
+        }}>
+          Search
+        </button>
+      </div>
+
       <div className="restaurentList">
-        {restaurantData.map((restaurent) => {
-          return <RestaurantCard  key={restaurent.data.id} {...restaurent.data} />;
+        {resData.map((restaurent) => {
+          return (
+            <RestaurantCard key={restaurent.data.id} {...restaurent.data} />
+          );
         })}
       </div>
-      </>
-    );
-  };
+    </>
+  );
+};
 
-
-  export default BodyComponent;
+export default BodyComponent;
